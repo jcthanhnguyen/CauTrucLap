@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse number</title>
+    <style>
+        #reverse {
+            background-color: rgb(25, 129, 221);
+            color: white;
+            border: 0;
+            margin-left: 1.5in;
+        }
+        
+        button {
+            width: 0.75in;
+            height: 0.3in;
+        }
+        
+        * {
+            margin: 8px;
+        }
+        
+        input {
+            width: 3in;
+            border-color: rgb(189, 188, 188);
+            height: 0.3in;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Nhập vào 1 số nguyên: </label> <br>
+        <input type="number" id="input"> <br>
+        <button type="button" id="reverse">OK</button>
+        <button type="reset">Cancel</button>
+        <p id="result">Số đảo ngược</p>
+    </form>
+
+    <script>
+        let reverse = document.getElementById('reverse');
+        reverse.addEventListener("click", () => {
+            let number = parseInt(document.getElementById('input').value);
+            let result = 0;
+            while (number != 0) {
+                result = result * 10 + (number % 10);
+
+                number = parseInt(number / 10);
+
+            }
+            document.getElementById('result').innerHTML = `Số đảo ngược = ${result}`;
+        });
+    </script>
+
+</body>
+
+</html>
