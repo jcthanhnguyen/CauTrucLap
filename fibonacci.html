@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt('Input amount of fibonacci numbers: '));
+        let i = 1;
+        let first = 1;
+        let second = 0;
+        while (i <= n) {
+            if (i == 1) document.write('1 ');
+            else {
+                let result = first + second;
+                second = first;
+                first = result;
+                document.write(result + ' ');
+            }
+
+
+            i++;
+        }
+        if (n <= 0) document.write('No numbers');
+    </script>
+</body>
+
+</html>
