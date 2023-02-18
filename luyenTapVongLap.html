@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button type="button" id="ex1">Ex1</button>
+    <button type="button" id="ex2">Ex2</button>
+    <button type="button" id="ex3">ex3</button>
+    <button type="button" id="ex4">Ex4</button>
+    <button type="button" id="ex5">Ex5</button>
+    <button type="button" id="ex6">Ex6</button>
+    <button type="button" id="ex7">Ex7</button>
+    <script>
+        //ex1
+        let ex1 = document.getElementById('ex1');
+        ex1.addEventListener("click", () => {
+            for (let i = 1; i <= 100; i++) {
+                document.write(i + ' ');
+                if (i == 99) alert('Da hoan thanh');
+            }
+        });
+
+
+
+        //ex2
+        let ex2 = document.getElementById('ex2');
+        ex2.addEventListener('click', () => {
+            let temp = parseFloat(prompt('Nhap vao nhiet do: '));
+            while (temp < 20 || temp > 100) {
+                if (temp < 20) alert('Hay tang nhiet do');
+                else alert('Hay giam nhiet do');
+                temp = parseFloat(prompt('Nhap lai nhiet do da thay doi: '));
+            }
+        });
+
+        //ex3
+        let ex3 = document.getElementById('ex3');
+        ex3.addEventListener('click', () => {
+            let count = 0;
+            let first = 1;
+            let second = 0;
+            document.write('20 so fibonacci dau tien: 1  ');
+            while (count < 19) {
+                let result = first + second;
+                document.write(result + '  ');
+                second = first;
+                first = result;
+                count++;
+            }
+        });
+
+        //ex4
+        let ex4 = document.getElementById('ex4');
+        ex4.addEventListener('click', () => {
+            let first = 1;
+            let second = 0;
+            while (true) {
+                let result = first + second;
+                second = first;
+                first = result;
+                if (result % 5 == 0) {
+                    document.write('so fibonacci dau tien chia het cho 5 = ' + result);
+                    break;
+                }
+            }
+        });
+
+        //ex5
+        let ex5 = document.getElementById('ex5');
+        ex5.addEventListener('click', () => {
+            let count = 0;
+            let first = 1;
+            let second = 0;
+            let total = 1;
+            while (count < 19) {
+                let result = first + second;
+
+                second = first;
+                first = result;
+                total += result;
+                count++;
+            }
+            document.write('Tong 20 so fibonacci dau tien la: ' + total);
+        });
+
+        //ex6
+        let ex6 = document.getElementById('ex6');
+        ex6.addEventListener('click', () => {
+            let sum = 0;
+            for (let i = 1; i <= 30; i++) {
+                sum += (7 * i);
+            }
+            document.write('tong cua 30 so tu nhien dau tien chia het cho 7 = ' + sum);
+        });
+
+        //ex7
+        let ex7 = document.getElementById('ex7');
+        ex7.addEventListener('click', () => {
+            for (let i = 1; i < 100; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    document.write('FizzBuzz  ');
+                } else if (i % 3 == 0) document.write('Fizz   ');
+                else if (i % 5 == 0) document.write('Buzz   ');
+                else document.write(i + '   ');
+            }
+        });
+    </script>
+</body>
+
+</html>
